@@ -2,43 +2,59 @@
 <html lang="en" style="width: 100%;
 height: 100%;">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <title>Tonakai studio</title>
-    <style>
-    body{
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .backdrop{
-        height: 100%;
-        width: 100%;
-        background-image: url('./bg_desk.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .link{
-        width: 100%;
-        position:absolute;
-        height: 50%;
-        bottom: 0px;
-	outline: none;
-    }
-    @media only screen and (max-width: 600px) {
-  .backdrop {
-    background-image: url('./bg_mobi.png');
-  }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+   <title>Tonakai studio</title>
+   <style>
+   body{
+       width: 100%;
+       height: 100%;
+       margin: 0;
+       padding: 0;
+   }
+   .backdrop{
+       height: 100%;
+       width: 100%;
+       background-image: url('./bg_desk.png');
+       background-repeat: no-repeat;
+       background-size: cover;
+   }
+   .link{
+       width: 100%;
+       position:absolute;
+       height: 50%;
+       bottom: 0px;
+   outline: none;
+   }
+   @media only screen and (max-width: 600px) {
+ .backdrop {
+   background-image: url('./bg_mobi.png');
+ }
 }
-    </style>
+   </style>
 </head>
-<body>
-    <div class="backdrop" >
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tonakaistudio@gmail.com" class="link" 
-	target="_blank"></a>
-    </div>
+<body onload="readHistory()">
+   <div class="backdrop" >
+       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tonakaistudio@gmail.com" target="_blank" class="link" id='mailTo'></a>
+   </div>
+   <script>
+       const mailObj = document.getElementById("mailTo");
+       const readHistory=()=>{
+          try{
+          let previousUrl = document.referrer;
+          let index = previousUrl.indexOf('com')
+          let slicedtext =  previousUrl.slice(0,index+3)
+           mailObj.setAttribute("href", `https://mail.google.com/mail/?view=cm&fs=1&to=tonakaistudio@gmail.com&su=query-reagarding:${slicedtext}`);
+          }catch(err){
+          //err
+           }
+       }
+   </script>
 </body>
 </html>
+ 
+ 
+ 
+
