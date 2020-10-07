@@ -26,7 +26,7 @@ height: 100%;">
        position:absolute;
        height: 50%;
        bottom: 0px;
-   outline: none;
+       outline: none;
    }
    @media only screen and (max-width: 600px) {
  .backdrop {
@@ -35,23 +35,10 @@ height: 100%;">
 }
    </style>
 </head>
-<body onload="readHistory()">
+<body>
    <div class="backdrop" >
-       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tonakaistudio@gmail.com" target="_blank" class="link" id='mailTo'></a>
+       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tonakaistudio@gmail.com&su=Domain-related" target="_blank" class="link" id='mailTo'></a>
    </div>
-   <script>
-       const mailObj = document.getElementById("mailTo");
-       const readHistory=()=>{
-          try{
-          let previousUrl = document.referrer;
-          let index = previousUrl.indexOf('com')
-          let slicedtext =  previousUrl.slice(0,index+3)
-           mailObj.setAttribute("href", `https://mail.google.com/mail/?view=cm&fs=1&to=tonakaistudio@gmail.com&su=query-reagarding:${slicedtext}`);
-          }catch(err){
-          //err
-           }
-       }
-   </script>
 </body>
 </html>
  
